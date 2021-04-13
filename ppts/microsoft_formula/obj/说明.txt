@@ -1,0 +1,49 @@
+Object 1 
+"C:\Users\acmis\Desktop\ppts\microsoft_formula\Object 1"
+odp 根目录的文件
+
+oleObject1.bin  
+"C:\Users\acmis\Desktop\ppts\microsoft_formula\ppt\embeddings\oleObject1.bin"
+原生ppt 下的文件
+
+
+两个文件的 MD5 一模一样，是同一个文件。
+
+pptx 专为 odp 的时候，将 oleObject1.bin 直接改名为  Object 1 
+
+
+
+C:\Users\acmis\Desktop\ppts\microsoft_formula\obj>certutil -hashfile "Object 1" MD5
+MD5 的 Object 1 哈希:
+832a1d856a0ea745e53585094f65ab43
+CertUtil: -hashfile 命令成功完成。
+
+C:\Users\acmis\Desktop\ppts\microsoft_formula\obj>certutil -hashfile oleObject1.bin MD5
+MD5 的 oleObject1.bin 哈希:
+832a1d856a0ea745e53585094f65ab43
+CertUtil: -hashfile 命令成功完成。
+
+
+
+image1.wmf
+"C:\Users\acmis\Desktop\ppts\microsoft_formula\ppt\media\image1.wmf"
+原生ppt的文件
+
+ObObject 1
+"C:\Users\acmis\Desktop\ppts\microsoft_formula\ObjectReplacements\Object 1"
+ObjectReplacements 下的 Object 1文件
+
+C:\Users\acmis\Desktop\ppts\microsoft_formula\obj>certutil -hashfile image1.wmf
+
+SHA1 的 image1.wmf 哈希:
+e1635afb461f50ffc8272582f9dbf2a504101762
+CertUtil: -hashfile 命令成功完成。
+
+C:\Users\acmis\Desktop\ppts\microsoft_formula\obj>certutil -hashfile "ObObject 1"
+SHA1 的 ObObject 1 哈希:
+e1635afb461f50ffc8272582f9dbf2a504101762
+CertUtil: -hashfile 命令成功完成。
+
+两个文件的 hash 一模一样
+
+pptx 专为 odp 的时候，将 image1.wmf 直接改名为  ObjectReplacements/Object 1  文件
