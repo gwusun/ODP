@@ -1,49 +1,27 @@
-package cn.test;
+package cn.odp;
 
-// Copyright 2020 Sebastian Kuerten
-//
-// This file is part of odftoolkit-samples.
-//
-// Licensed under the Apache License, Version 2.0 (the "License");
-// you may not use this file except in compliance with the License.
-// You may obtain a copy of the License at
-//
-//   http://www.apache.org/licenses/LICENSE-2.0
-//
-// Unless required by applicable law or agreed to in writing, software
-// distributed under the License is distributed on an "AS IS" BASIS,
-// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-// See the License for the specific language governing permissions and
-// limitations under the License.
-
-
-import cn.test.lessonplan.LessonplanSlide;
-import cn.test.lib.EnumXMLTag;
-import cn.test.lib.text.EnumElementType;
-import cn.test.lib.text.LessonplanText;
+import cn.odp.lib.EnumElementType;
+import cn.odp.lib.Utils;
+import cn.odp.lib.slide.LessonplanSlide;
+import cn.odp.lib.text.LessonplanText;
 import lombok.extern.slf4j.Slf4j;
 import org.odftoolkit.odfdom.doc.OdfPresentationDocument;
 import org.odftoolkit.odfdom.doc.presentation.OdfSlide;
 import org.odftoolkit.odfdom.dom.element.draw.DrawFrameElement;
 import org.odftoolkit.odfdom.dom.element.draw.DrawPageElement;
 import org.odftoolkit.odfdom.dom.element.presentation.PresentationNotesElement;
-import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
 import java.io.File;
 import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Iterator;
 
-/*
- * Load a file from the resources directory and print its plain text content
- */
 @Slf4j
-public class PrintSamplePlainText {
-
-    public static void main(String[] args) throws Exception {
-        String file = "ppts/formula.odp";
-        OdfPresentationDocument odfPresentationDocument = OdfPresentationDocument.loadDocument(new File(file));
+public class Trans {
+    public void start(String fileName) throws Exception {
+        OdfPresentationDocument odfPresentationDocument = OdfPresentationDocument.loadDocument(new File(fileName));
 
         Iterator<OdfSlide> slides = odfPresentationDocument.getSlides();
         StringBuilder html = new StringBuilder();
@@ -169,7 +147,5 @@ public class PrintSamplePlainText {
         FileWriter fileWriter = new FileWriter("out.html");
         fileWriter.write(html.toString());
         fileWriter.close();
-
     }
-
 }

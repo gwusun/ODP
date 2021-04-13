@@ -3,9 +3,9 @@
  * @create 2021 04 12 21:56
  */
 
-package cn.test.lessonplan;
+package cn.odp.lib.slide;
 
-import cn.test.ILessonplan;
+import cn.odp.ILessonplan;
 import lombok.Data;
 
 import java.io.IOException;

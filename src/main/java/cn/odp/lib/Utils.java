@@ -3,10 +3,8 @@
  * @create 2021 04 11 15:26
  */
 
-package cn.test;
+package cn.odp.lib;
 
-import cn.test.lib.EnumXMLTag;
-import cn.test.lib.text.EnumElementType;
 import lombok.extern.slf4j.Slf4j;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
@@ -62,9 +60,9 @@ public class Utils {
         }
 
         //存文本
-        if (ele.getElementsByTagName(EnumXMLTag.TEXT_BOX).getLength() > 0 //有 TEXT_BOX
-                && ele.getElementsByTagName(EnumXMLTag.DRAW_FRAME).getLength() == 0 //没有 DRAW_FRAME
-                && ele.getElementsByTagName(EnumXMLTag.DRAW_OBJECT).getLength() == 0//meiyou draw:object
+        if (ele.getElementsByTagName(EnumXMLTagName.TEXT_BOX).getLength() > 0 //有 TEXT_BOX
+                && ele.getElementsByTagName(EnumXMLTagName.DRAW_FRAME).getLength() == 0 //没有 DRAW_FRAME
+                && ele.getElementsByTagName(EnumXMLTagName.DRAW_OBJECT).getLength() == 0//meiyou draw:object
         ) {
             return EnumElementType.TYPE_SIMPLE_TEXT;
         } else {

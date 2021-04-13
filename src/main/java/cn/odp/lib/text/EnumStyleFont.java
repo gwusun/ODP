@@ -1,4 +1,4 @@
-package cn.test.lib;
+package cn.odp.lib.text;
 
 //将 xml 中的所有属性对应过来
 //            <style:text-properties fo:font-variant="normal" fo:text-transform="none" fo:color="#000000"
@@ -46,10 +46,12 @@ public enum EnumStyleFont {
     TEXT_UNDERLINE_WIDTH("text-underline-width");
 
     private String text;
+
     EnumStyleFont(String text) {
-        this.text=text;
+        this.text = text;
     }
-    public String getText(){
+
+    public String getText() {
         return this.text;
     }
 

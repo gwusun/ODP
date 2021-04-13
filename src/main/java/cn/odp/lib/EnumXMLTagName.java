@@ -1,6 +1,12 @@
-package cn.test.lib;
+package cn.odp.lib;
 
-public class EnumXMLTag {
+/**
+ * xml 的 tag名称
+ * text:span
+ * draw:text-box
+ * 。。。
+ */
+public class EnumXMLTagName {
     //    文本
     public static final String TEXT_BOX = "draw:text-box";
     public static final String TEXT_PARAGRAPH = "text:p";

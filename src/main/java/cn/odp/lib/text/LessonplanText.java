@@ -1,10 +1,8 @@
-package cn.test.lib.text;
+package cn.odp.lib.text;
 
-import cn.test.EnumFamily;
-import cn.test.Lessonplan;
-import cn.test.Utils;
-import cn.test.lib.EnumStyleFont;
-import cn.test.lib.StyleFont;
+import cn.odp.Lessonplan;
+import cn.odp.lib.Utils;
+import cn.odp.lib.style.StyleFont;
 import lombok.extern.slf4j.Slf4j;
 import org.jsoup.nodes.Element;
 import org.odftoolkit.odfdom.dom.element.draw.DrawFrameElement;
@@ -66,8 +64,6 @@ public class LessonplanText extends Lessonplan {
         this.parseElementPosition(slideEle);
 
 
-
-
         if (slideEle instanceof DrawFrameElement) {
             String style = "position:absolute;" + this.generateCssPosition();
             context.attr("style", style);
@@ -75,7 +71,7 @@ public class LessonplanText extends Lessonplan {
             //文本 text:span
             StyleFont styleFont = new StyleFont();
             OdfStyle mStyleParent = ((TextSpanElement) slideEle).getAutomaticStyle();
-            if (mStyleParent.getFamilyName().equals(EnumFamily.TEXT.getFamily())) {
+            if (mStyleParent.getFamilyName().equals(EnumStyleFamily.TEXT)) {
                 Node firstChild = mStyleParent.getFirstChild();
                 NamedNodeMap attributes1 = firstChild.getAttributes();
                 for (int i = 0; i < attributes1.getLength(); i++) {
